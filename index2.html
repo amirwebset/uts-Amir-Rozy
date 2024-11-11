@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <div class="container">
+        <h2>Kalkulator Sederhana</h2>
+        
+        <!-- Form untuk kalkulasi menggunakan JavaScript -->
+        <h3>Kalkulasi dengan JavaScript</h3>
+        <input type="number" id="num1" placeholder="Angka pertama">
+        <input type="number" id="num2" placeholder="Angka kedua">
+        
+        <select id="operation">
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+        </select>
+        
+        <button onclick="calculate()">Hitung</button>
+        <div id="jsResult" class="result"></div>
+        
+        <!-- Form untuk kalkulasi menggunakan PHP -->
+        <h3>Kalkulasi dengan PHP</h3>
+        <form action="kalkulator.php" method="post">
+            <input type="number" name="num1" placeholder="Angka pertama" required>
+            <input type="number" name="num2" placeholder="Angka kedua" required>
+            
+            <select name="operation">
+                <option value="add">+</option>
+                <option value="subtract">-</option>
+                <option value="multiply">*</option>
+                <option value="divide">/</option>
+            </select>
+            
+            <button type="submit">Hitung</button>
+        </form>
+        
+        <?php if (isset($_GET['result'])): ?>
+            <div class="result">
+                <h3>Hasil PHP: <?php echo htmlspecialchars($_GET['result']); ?></h3>
+            </div>
+        <?php endif; ?>
+    </div>
+</body>
+</html>
